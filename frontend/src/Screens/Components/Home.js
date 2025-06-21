@@ -39,7 +39,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 via-blue-900 to-black">
+        <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black">
             <div className="fixed inset-0 z-0">
                 {stars.map((star) => (
                     <div
