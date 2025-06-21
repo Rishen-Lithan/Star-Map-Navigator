@@ -18,17 +18,7 @@ const Navbar = () => {
 
     const handleLogout = async () => {
         try {
-            const reponse = await axios.get('http://localhost:3500/logout', {}, {
-                withCredentials: true
-            });
-
-            if (reponse.status === 204) {
-                document.cookie = 'jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-                console.log('User logout successfully');
-                navigate('/');
-            } else {
-                console.error('Logout failed : ', reponse.status);
-            }
+            
         } catch (error) {
             console.error('Logout failed : ', error.message);
         }

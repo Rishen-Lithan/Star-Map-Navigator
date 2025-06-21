@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
-const Login = () => {
+const Signup = () => {
   const navigate = useNavigate();
 
   // Usage of States
@@ -10,29 +10,6 @@ const Login = () => {
   const [user, setUser] = useState('');
   const [pwd, setPwd] = useState('')
 
-  // handleSubmit function to handle signup functionality
-  const handleSubmit = async(e) => {
-    e.preventDefault();
-
-    try {
-      if (user === '' || pwd === '') {
-        console.log('Please enter required credentials');
-        setError('Please Enter required Credentials');
-      } else {
-        const response = await axios.post('http://localhost:3500/register', {user: user, pwd: pwd});
-        console.log('User Response : ', response.data);
-        navigate('/');
-      }
-    } catch (error) {
-      if (!error?.response) {
-        setError('No Server Response')
-      } else if (error.response?.status === 409) {
-        setError('User Credentials are already Taken');
-      } else {
-        setError('Registration Failed');
-      }
-    }
-  }
   return (
     <div className='flex w-full h-screen'>
       <div className='flex items-center justify-center w-full lg:w-1/2'>
@@ -49,6 +26,7 @@ const Login = () => {
                 id='user'
                 required
                 onChange={(e) => setUser(e.target.value)}
+                autoComplete='off'
               />
             </div>
             {error && <p className="mt-4 text-sm text-center text-red-500 error md:text-center">{error}</p>}
@@ -66,7 +44,7 @@ const Login = () => {
             </div>
             {error && <p className="mt-4 text-sm text-center text-red-500 error md:text-center">{error}</p>}
             <div className='flex flex-col mt-8 gap-y-4'>
-              <button className=' active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all text-white py-3 rounded-xl bg-blue-900 text-lg font-bold' onClick={handleSubmit}>Sign Up</button>
+              <button className=' active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all text-white py-3 rounded-xl bg-blue-900 text-lg font-bold'>Sign Up</button>
             </div>
             <div className='flex items-center justify-center mt-8'>
               <p className='text-base font-medium'>Already have an account?</p>
@@ -83,4 +61,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Signup
