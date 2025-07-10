@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom"
-
 const Missing = () => {
     return (
         <article class="h-screen bg-blue-950 flex justify-center items-center">

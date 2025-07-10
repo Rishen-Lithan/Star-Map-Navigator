@@ -5,7 +5,6 @@ const Home = () => {
     const [stars, setStars] = useState([]);
     const [meteors, setMeteors] = useState([]);
 
-    // Generate random stars on component mount
     useEffect(() => {
         const generateStars = () => {
             const starArray = [];
@@ -112,7 +111,7 @@ const Home = () => {
                     </div>
                 </nav>
                 
-                <main className="flex flex-col items-center justify-center min-h-screen px-6">
+                <main className="flex flex-col items-center justify-center min-h-screen p-6">
                     <section className="max-w-6xl mx-auto text-center">
                         <div className="mb-8">
                             <div className="inline-block mb-6">
@@ -163,29 +162,6 @@ const Home = () => {
                                 <h3 className="mb-2 font-semibold text-white">Deep Space</h3>
                                 <p className="text-sm text-purple-200 opacity-80">Near Earth Objects & Beyond</p>
                             </div>
-                        </div>
-
-                        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-                            <button 
-                                onClick={() => {
-                                    alert('Navigate to APOD page - Replace with your router navigation');
-                                }}
-                                className="relative px-12 py-4 overflow-hidden font-semibold text-white transition-all duration-500 transform cursor-pointer group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-2xl hover:-translate-y-2 hover:scale-105 hover:shadow-2xl"
-                            >
-                                    <div className="absolute inset-0 transition-all duration-700 transform -skew-x-12 opacity-0 -top-1 -left-1 bg-gradient-to-r from-transparent via-white to-transparent group-hover:opacity-30" />
-                                    
-                                    <span className="relative flex items-center space-x-3">
-                                        <span className="tracking-wide">EXPLORE NOW</span>
-                                        <span className="text-xl">🚀</span>
-                                    </span>
-                                </button>
-                            
-                            <button className="px-8 py-4 font-medium text-white transition-all duration-300 transform bg-white border border-white group bg-opacity-10 hover:bg-opacity-20 border-opacity-30 hover:border-opacity-50 rounded-2xl hover:-translate-y-1">
-                                <span className="flex items-center space-x-2">
-                                    <span>Learn More</span>
-                                    <span className="transition-transform duration-300 transform group-hover:translate-x-1">→</span>
-                                </span>
-                            </button>
                         </div>
 
                         <div className="flex items-center justify-center mt-16 mb-10 space-x-8 opacity-60">
